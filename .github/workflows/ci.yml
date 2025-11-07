@@ -33,6 +33,7 @@ jobs:
       
       - name: Check for image changes
         id: check_changes
+        if: always()
         run: |
           git diff --quiet --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
       
