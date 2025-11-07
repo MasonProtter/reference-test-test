@@ -37,7 +37,7 @@ jobs:
           git diff --quiet --exit-code || echo "has_changes=true" >> $GITHUB_OUTPUT
       
       - name: Create PR with updated images
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: if: always() && steps.check_changes.outputs.has_changes == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
