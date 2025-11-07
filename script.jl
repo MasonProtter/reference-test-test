@@ -5,7 +5,6 @@ reference_test_watcher = Threads.@spawn begin
     error()
 end
 
-
 @testset "plt" begin
     xs = 1:0.01:10
     ys = sin.(xs) .+ rand() ./ 10
