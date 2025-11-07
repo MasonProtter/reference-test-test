@@ -28,7 +28,7 @@ jobs:
         run: julia --project=. -e 'using Pkg; Pkg.instantiate()'
       - name: Run script
         run: |
-          julia --project=. script.jl
+          JULIA_REFERENCETESTS_UPDATE=true julia --project=. script.jl
       
       - name: Check for image changes
         id: check_changes
